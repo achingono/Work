@@ -1,0 +1,63 @@
+﻿<div class="page-header">
+
+    <h1>@ViewBag.Title</h1>
+    <div class="pull-right">
+        @Html.ActionLink("Add", "Add", null, new { @class = "btn btn-primary" })
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Company</th>
+            <th>Mailing</th>
+            <th>Billing</th>
+            <th>Technical</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: Clients">
+        <tr>
+            <td data-bind="text: Company"></td>
+            <td>
+                <address>
+                    <strong>
+                        <span data-bind="text: Mailing.FirstName"></span> <span data-bind="text: Mailing.LastName"></span><br />
+                    </strong>
+                    <span data-bind="text: Mailing.Address.Street"></span><br />
+                    <span data-bind="text: Mailing.Address.City"></span>, <span data-bind="text: Mailing.Address.State"></span> <span data-bind="text: Mailing.Address.PostalCode"></span>
+                </address>
+                T: <span data-bind="text: Mailing.Phone"></span><br />
+                F: <span data-bind="text: Mailing.Fax"></span><br />
+                E: <span data-bind="text: Mailing.Email"></span><br />
+            </td>
+            <td>
+                <address>
+                    <strong>
+                        <span data-bind="text: Billing.FirstName"></span> <span data-bind="text: Billing.LastName"></span><br />
+                    </strong>
+                    <span data-bind="text: Billing.Address.Street"></span><br />
+                    <span data-bind="text: Billing.Address.City"></span>, <span data-bind="text: Billing.Address.State"></span> <span data-bind="text: Billing.Address.PostalCode"></span>
+                </address>
+                T: <span data-bind="text: Billing.Phone"></span><br />
+                F: <span data-bind="text: Billing.Fax"></span><br />
+                E: <span data-bind="text: Billing.Email"></span><br />
+            </td>
+            <td>
+                <address>
+                    <strong>
+                        <span data-bind="text: Technical.FirstName"></span> <span data-bind="text: Technical.LastName"></span><br />
+                    </strong>
+                    <span data-bind="text: Technical.Address.Street"></span><br />
+                    <span data-bind="text: Technical.Address.City"></span>, <span data-bind="text: Technical.Address.State"></span> <span data-bind="text: Technical.Address.PostalCode"></span>
+                </address>
+                T: <span data-bind="text: Technical.Phone"></span><br />
+                F: <span data-bind="text: Technical.Fax"></span><br />
+                E: <span data-bind="text: Technical.Email"></span><br />
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", null, new { @class = "btn btn-default", data_bind = "append: { attribute: 'href', value: Id, separator: '/' }" })
+            </td>
+        </tr>
+    </tbody>
+</table>

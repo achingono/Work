@@ -1,0 +1,87 @@
+﻿@model Work.Web.ClientModel
+@{ 
+    ViewBag.Title = "Add Client";
+}
+<div class="page-header">
+    <h1>@ViewBag.Title</h1>
+</div>
+
+<div class="alert alert-success alert-dismissible hide" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Success!</strong> Your changes have been saved successfully. 
+    Please click <a href="@Url.Action("Edit")" data-bind="append: { attribute: 'href', separator: '/', value: Id }">here</a> to make changes to your new client.
+</div>
+
+<div class="alert alert-danger alert-dismissible hide" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Error!</strong> Something went wrong with the submission of your request. Please check your inputs and try again.
+</div>
+
+<form class="form-horizontal">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Company">Company</label>
+                <input type="text" class="form-control" id="Company" data-bind="value: Company">
+            </div>
+            <div class="form-group">
+                <label for="Company">Rate</label>
+                <input type="text" class="form-control" id="Rate" data-bind="value: Rate">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="Notes">Notes</label>
+            <textarea class="form-control" id="Notes" rows="6" cols="8" data-bind="value: Notes"></textarea>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Mailing Contact</h3>
+            <input type="text" class="form-control" id="Mailing.FirstName" data-bind="value: Mailing.FirstName" placeholder="First Name" />
+            <input type="text" class="form-control" id="Mailing.LastName" data-bind="value: Mailing.LastName" placeholder="Last Name" />
+            <input type="text" class="form-control" id="Mailing.Address.Street" data-bind="value: Mailing.Address.Street" placeholder="Street" />
+            <input type="text" class="form-control" id="Mailing.Address.City" data-bind="value: Mailing.Address.City" placeholder="City" />
+            <input type="text" class="form-control" id="Mailing.Address.State" data-bind="value: Mailing.Address.State" placeholder="State" />
+            <input type="text" class="form-control" id="Mailing.Address.PostalCode" data-bind="value: Mailing.Address.PostalCode" placeholder="PostalCode" />
+            <input type="tel" class="form-control" id="Mailing.Phone" data-bind="value: Mailing.Phone" placeholder="Phone" />
+            <input type="tel" class="form-control" id="Mailing.Fax" data-bind="value: Mailing.Fax" placeholder="Fax" />
+            <input type="email" class="form-control" id="Mailing.Email" data-bind="value: Mailing.Email" placeholder="Email" />
+        </div>
+        <div class="col-md-4">
+            <h3>Billing Contact</h3>
+            <input type="text" class="form-control" id="Billing.FirstName" data-bind="value: Billing.FirstName" placeholder="First Name" />
+            <input type="text" class="form-control" id="Billing.LastName" data-bind="value: Billing.LastName" placeholder="Last Name" />
+            <input type="text" class="form-control" id="Billing.Address.Street" data-bind="value: Billing.Address.Street" placeholder="Street" />
+            <input type="text" class="form-control" id="Billing.Address.City" data-bind="value: Billing.Address.City" placeholder="City" />
+            <input type="text" class="form-control" id="Billing.Address.State" data-bind="value: Billing.Address.State" placeholder="State" />
+            <input type="text" class="form-control" id="Billing.Address.PostalCode" data-bind="value: Billing.Address.PostalCode" placeholder="PostalCode" />
+            <input type="tel" class="form-control" id="Billing.Phone" data-bind="value: Billing.Phone" placeholder="Phone" />
+            <input type="tel" class="form-control" id="Billing.Fax" data-bind="value: Billing.Fax" placeholder="Fax" />
+            <input type="email" class="form-control" id="Billing.Email" data-bind="value: Billing.Email" placeholder="Email" />
+        </div>
+        <div class="col-md-4">
+            <h3>Technical Contact</h3>
+            <input type="text" class="form-control" id="Technical.FirstName" data-bind="value: Technical.FirstName" placeholder="First Name" />
+            <input type="text" class="form-control" id="Technical.LastName" data-bind="value: Technical.LastName" placeholder="Last Name" />
+            <input type="text" class="form-control" id="Technical.Address.Street" data-bind="value: Technical.Address.Street" placeholder="Street" />
+            <input type="text" class="form-control" id="Technical.Address.City" data-bind="value: Technical.Address.City" placeholder="City" />
+            <input type="text" class="form-control" id="Technical.Address.State" data-bind="value: Technical.Address.State" placeholder="State" />
+            <input type="text" class="form-control" id="Technical.Address.PostalCode" data-bind="value: Technical.Address.PostalCode" placeholder="PostalCode" />
+            <input type="tel" class="form-control" id="Technical.Phone" data-bind="value: Technical.Phone" placeholder="Phone" />
+            <input type="tel" class="form-control" id="Technical.Fax" data-bind="value: Technical.Fax" placeholder="Fax" />
+            <input type="email" class="form-control" id="Technical.Email" data-bind="value: Technical.Email" placeholder="Email" />
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+        <div class="col-md-12">
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+            @Html.ActionLink("Submit", "Add", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+</form>

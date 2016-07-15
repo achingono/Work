@@ -1,0 +1,44 @@
+﻿<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Clients</h3>
+            </div>
+            <div class="panel-body">
+                There are currently <strong data-bind="text: Clients"></strong> clients in the system
+                @Html.ActionLink("View", "Index", new { controller = "Clients" }, new { @class = "btn btn-default" } )
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Projects</h3>
+            </div>
+            <div class="panel-body">
+                There are currently <strong data-bind="text: Projects"></strong> projects in the system
+                @Html.ActionLink("View", "Index", new { controller = "Projects" }, new { @class = "btn btn-default" })
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Employees</h3>
+            </div>
+            <div class="panel-body">
+                There are currently <strong data-bind="text: Employees"></strong> employees in the system
+                @Html.ActionLink("View", "Index", new { controller = "Employees" }, new { @class = "btn btn-default" })
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Teams</h3>
+            </div>
+            <div class="panel-body">
+                There are currently <strong data-bind="text: Teams"></strong> teams in the system
+                @Html.ActionLink("View", "Index", new { controller = "Teams" }, new { @class = "btn btn-default" })
+            </div>
+        </div>
+    </div>
+</div>
